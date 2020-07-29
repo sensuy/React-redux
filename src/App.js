@@ -1,13 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import Sidebar from './components/Sidebar';
+import Video from './components/Video';
 
-function App() {
-  return (
-    <div className="App">
+import store from './store'
 
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <Provider store={store} >
+          <Video />
+          <Sidebar />
+        </Provider>
+
+      </div>
+    )
+  }
 }
 
 export default App;
